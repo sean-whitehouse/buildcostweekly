@@ -1,0 +1,154 @@
+/* BuildCostWeekly — single shared stylesheet. No build step, no dependencies. */
+:root {
+  --ink: #1f2933;
+  --ink-soft: #52606d;
+  --paper: #ffffff;
+  --paper-soft: #f5f7fa;
+  --accent: #c05621;      /* safety-vest orange, muted */
+  --accent-dark: #9c4215;
+  --line: #e4e7eb;
+  --good: #2f855a;
+  --bad: #c53030;
+  --max-width: 46rem;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.65;
+  font-size: 1.0625rem;
+}
+
+header.site, footer.site, main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Header */
+header.site {
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid var(--accent);
+  margin-bottom: 2rem;
+}
+.brand {
+  font-family: 'Trebuchet MS', Verdana, sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.brand span { color: var(--accent); }
+.tagline {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  margin: 0.25rem 0 0.75rem;
+}
+nav.main a {
+  font-family: 'Trebuchet MS', Verdana, sans-serif;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  text-decoration: none;
+  margin-right: 1.25rem;
+}
+nav.main a:hover, nav.main a[aria-current="page"] { color: var(--accent-dark); }
+
+/* Content */
+h1 { font-size: 1.9rem; line-height: 1.25; margin: 0 0 0.5rem; }
+h2 { font-size: 1.35rem; margin-top: 2.25rem; }
+h3 { font-size: 1.1rem; }
+a { color: var(--accent-dark); }
+.meta { color: var(--ink-soft); font-size: 0.9rem; margin-bottom: 1.5rem; }
+
+/* Price table */
+table.prices {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-family: 'Trebuchet MS', Verdana, sans-serif;
+  font-size: 0.95rem;
+}
+table.prices th, table.prices td {
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--line);
+}
+table.prices th { background: var(--paper-soft); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.up   { color: var(--bad); font-weight: 700; }   /* prices up = bad for builders */
+.down { color: var(--good); font-weight: 700; }
+.flat { color: var(--ink-soft); }
+
+/* Callout boxes */
+.callout {
+  background: var(--paper-soft);
+  border-left: 4px solid var(--accent);
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  border-radius: 0 4px 4px 0;
+}
+.callout h3 { margin-top: 0; }
+
+.disclosure-note {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  background: var(--paper-soft);
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+/* Card list (guides / tools indexes) */
+ul.cards { list-style: none; padding: 0; }
+ul.cards li {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+ul.cards li a { font-family: 'Trebuchet MS', Verdana, sans-serif; font-weight: 700; font-size: 1.05rem; text-decoration: none; }
+ul.cards li p { margin: 0.4rem 0 0; color: var(--ink-soft); font-size: 0.95rem; }
+
+/* Newsletter box */
+.subscribe {
+  border: 2px solid var(--accent);
+  border-radius: 6px;
+  padding: 1.25rem;
+  margin: 2.5rem 0;
+  text-align: center;
+}
+.subscribe p { margin: 0.25rem 0 0.75rem; color: var(--ink-soft); }
+.subscribe a.button {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-family: 'Trebuchet MS', Verdana, sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 4px;
+}
+.subscribe a.button:hover { background: var(--accent-dark); }
+
+/* Footer */
+footer.site {
+  margin-top: 3.5rem;
+  padding-top: 1.25rem;
+  padding-bottom: 2.5rem;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+footer.site a { color: var(--ink-soft); }
+
+@media (max-width: 480px) {
+  body { font-size: 1rem; }
+  h1 { font-size: 1.5rem; }
+  table.prices { font-size: 0.85rem; }
+  table.prices th, table.prices td { padding: 0.45rem 0.5rem; }
+}
